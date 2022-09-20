@@ -6,12 +6,17 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+
     <!-- Bootsrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
 
-    <title>My Portofolio | FadhilAlFikri</title>
+    <title>My Portfolio | FadhilAlFikri</title>
   </head>
   <body id="home">
     <!-- Navbar -->
@@ -45,7 +50,7 @@
     <section class="jumbotron text-center">
       <img src="img/fadhil.jpg" alt="Fadhil Al Fikri" width="200" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Fadhil Al Fikri</h1>
-      <p class="lead">Martial Arts Trainer</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -64,11 +69,11 @@
             <h2>About Me</h2>
           </div>
         </div>
-        <div class="row justify-content-between fs-5 text-center">
-          <div class="col-md-4">
+        <div class="row justify-content-center fs-5 text-center">
+          <div class="col-md-4" data-aos="fade-right">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquid asperiores aliquam sed sunt ducimus explicabo cumque itaque, recusandae vitae?</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-left" data-aos-delay="200">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa corporis, est maiores nisi magnam voluptate, odit suscipit hic aliquam excepturi quia corrupti reprehenderit? Minima ut excepturi inventore officia itaque reiciendis!
           </div>
         </div>
@@ -93,27 +98,38 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/fadhil1.jpeg" class="card-img-top" alt="gallery 1" />
+          <div class="col-md-3 mb-3">
+            <div class="card" data-aos="flip-left" data-aos-duration="500">
+              <img src="img/fadhil6.jpeg" class="card-img-top" alt="gallery1" />
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text"></p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/fadhil1.jpeg" class="card-img-top" alt="gallery 1" />
+          <div class="col-md-3 mb-3">
+            <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="100">
+              <img src="img/fadhil2.jpeg" class="card-img-top" alt="gallery2" />
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text"></p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/fadhil1.jpeg" class="card-img-top" alt="gallery 1" />
+          <div class="col-md-3 mb-3">
+            <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="200">
+              <img src="img/fadhil4.jpeg" class="card-img-top" alt="gallery3" />
               <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="300">
+              <img src="img/fadhil5.jpeg" class="card-img-top" alt="gallery4" />
+              <div class="card-body">
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
               </div>
             </div>
           </div>
@@ -173,6 +189,25 @@
       <p>Created With <i class="bi bi-emoji-sunglasses-fill text-danger"></i> by <a href="https://www.instagram.com/fadhilalfikri/" class="text-white fw-bold">Fadhil Al Fikri</a></p>
     </footer>
     <!-- Akhir Footer -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 2000,
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.lead', {duration: 2, delay: 1.5, text: 'Martial Arts Trainer' });
+      gsap.from('.jumbotron img', {duration: 1.5, rotateY: 360, opacity: 0 }); 
+      gsap.from('.navbar', { duration: 2, y: '-100%', opacity: 0, ease: 'bounce'});
+      gsap.from('.display-4', { duration: 1, x: -50, opacity: 0, delay: 0.8, ease: 'back'});
+
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   </body>
